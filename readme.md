@@ -24,3 +24,8 @@ Am I getting Higher or Lower Rate Mobility component (DLA – may have a motabil
 Processing staff will identify the customer record and undertake basic security checking, ie asking key questions against information we hold, to verify it is the customer before being able to share any data.
  
 For this exercise you are building a front end UI solution. To demonstrate the prototype solution you should create a simple DB that will contain dummy data that the screens will draw input from.
+
+So as above is the general epic required of the project, im going to start off with breaking the user needs into smaller tickets, to then add to a kanban board of types, and then will add the user tickets to that board and progress as i go on. Please See the documentation folder for more details.
+
+
+
