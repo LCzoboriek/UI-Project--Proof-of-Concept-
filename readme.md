@@ -1,4 +1,4 @@
-# ------------------------------------------------------------------------------------------------ #
+
 UI Project for L4 Apprenticeship, proof of concept. This project will be entirely using 
 dummy data, this is due to the fact that it is a proof of concept that a front end
 GUI/Web interface can be generated and created to allow an end user to access particular
