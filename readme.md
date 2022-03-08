@@ -1,8 +1,8 @@
 # ------------------------------------------------------------------------------------------------ #
-# UI Project for L4 Apprenticeship, proof of concept. This project will be entirely using 
-# dummy data, this is due to the fact that it is a proof of concept that a front end
-# GUI/Web interface can be generated and created to allow an end user to access particular
-# personell records and benefit rates, among other required user needs.
+UI Project for L4 Apprenticeship, proof of concept. This project will be entirely using 
+dummy data, this is due to the fact that it is a proof of concept that a front end
+GUI/Web interface can be generated and created to allow an end user to access particular
+personell records and benefit rates, among other required user needs.
 
 
 // The user needs are described below, for what the minimum viable product will be for the IICS 
@@ -27,5 +27,5 @@ For this exercise you are building a front end UI solution. To demonstrate the p
 
 So as above is the general epic required of the project, im going to start off with breaking the user needs into smaller tickets, to then add to a kanban board of types, and then will add the user tickets to that board and progress as i go on. Please See the documentation folder for more details.
 
-
+https://miro.com/app/board/uXjVOKFWf6M=/ -- Kanban, User Story Mapping, and any other relevant information 
 
