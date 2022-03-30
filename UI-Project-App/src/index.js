@@ -12,13 +12,13 @@ const PORT = 4000
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(body_parser.urlencoded({extended: false}));
 app.use(body_parser.json());
-app.set('views','./views'); // Path to where my views are located
-app.set('view engine','nunjucks'); // Using a view engine and what one you are using
+app.set('views','./src/views'); // Path to where my views are located
+app.set('view engine','njk'); // Using a view engine and what one you are using
 
 nunjucks.configure(
     [
       "node_modules/govuk-frontend",
-      "views",
+      "./src/views",
     ], 
     {
       autoescape: true,
@@ -27,10 +27,13 @@ nunjucks.configure(
   )
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/test.njk'))
+  // res.sendFile(path.join(__dirname, 'pages/test.njk'))
+  res.render('test')
 })
 
-app.use('/assets', express.static(path.join(__dirname, '../public')))
+
+
+app.use('/assets', express.static(path.join(__dirname, '../../assets')))
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);

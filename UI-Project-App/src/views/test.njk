@@ -1,19 +1,8 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="#">
-    <title>Document</title>
-    
-</head>
-<body>
   {% extends "govuk/template.njk" %}
   {% block head %}
   <!--[if !IE 8]><!-->
-    <link href="/govuk-frontend/govuk/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./styles/main.css">
   <!--<![endif]-->
 
   {# For Internet Explorer 8, you need to compile specific stylesheet #}
@@ -37,5 +26,3 @@
   <script src="/govuk-frontend/all.js"></script>
   <script>window.GOVUKFrontend.initAll()</script>
 {% endblock %}
-</body>
-</html>
