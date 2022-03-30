@@ -9,7 +9,7 @@ const path = require('path');
 // const sass = require('sass');
 const PORT = 4000
 // const result = sass.compile('./test.scss');
-app.use(express.static(path.join(__dirname, '/public/')));
+app.use(express.static(path.join('./public/')));
 app.use('/assets', express.static(path.join(__dirname, '../../assets')));
 app.use(body_parser.urlencoded({extended: false}));
 app.use(body_parser.json());

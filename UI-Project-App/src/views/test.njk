@@ -18,12 +18,13 @@
 {% endblock %}
 
 {% block content %}
-  <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
-  <h1 class="govuk-heading-xl">CSS is a bitch</h1>
+  
+  <h1 class="govuk-heading-xl">God i hate relational structures, :(</h1>
 {% endblock %}
 
 {% block bodyEnd %}
   {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
+  <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
   <script src="/govuk-frontend/all.js"></script>
   <script>window.GOVUKFrontend.initAll()</script>
 {% endblock %}
