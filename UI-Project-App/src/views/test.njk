@@ -2,7 +2,7 @@
   {% block head %}
   <!--[if !IE 8]><!-->
     
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
   <!--<![endif]-->
 
   {# For Internet Explorer 8, you need to compile specific stylesheet #}
@@ -18,7 +18,8 @@
 {% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl">Default page template</h1>
+  <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+  <h1 class="govuk-heading-xl">CSS is a bitch</h1>
 {% endblock %}
 
 {% block bodyEnd %}
