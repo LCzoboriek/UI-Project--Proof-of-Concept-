@@ -18,14 +18,22 @@
 {% endblock %}
 
 {% block content %}
-  
-  <h1 class="govuk-heading-xl">Welcome Page</h1>
-</br>
-</br>
-</br>
-</br>
-</br>
 
+  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}  
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Login",
+      href: "home"
+    },
+    {
+      text: "Welcome",
+      href: "#"
+    }
+  ]
+}) }}
+  <h1 class="govuk-heading-xl">Welcome Page</h1>
+  
 
 
 {% endblock %}

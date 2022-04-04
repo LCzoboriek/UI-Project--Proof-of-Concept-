@@ -21,21 +21,24 @@ nunjucks.configure(
   [
     "node_modules/govuk-frontend",
     "./src/views",
-  ], 
+  ],
   {
     autoescape: true,
     express: app,
   },
-)
+);
 
 app.get('/', (req, res) => {
+  res.render('home')
+});
+
+app.get('/home', (req, res) => {
   res.render('home')
 });
 
 app.post('/login', (req, res) => {
   loginController.validatePassword(req.body, res)
 });
-
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
