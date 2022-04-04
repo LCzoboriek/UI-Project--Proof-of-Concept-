@@ -1,8 +1,28 @@
   {% extends "govuk/template.njk" %}
   {% block head %}
+    
   <!--[if !IE 8]><!-->
     
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+    {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  
+  homepageUrl: "welcome",
+  serviceName: "Home Hub",
+  serviceUrl: "welcome",
+  navigation: [
+    {
+      href: "help",
+      text: "Help",
+      active: true
+    },
+    {
+      href: "home",
+      text: "Logout"
+    }
+  ]
+}) }}
   <!--<![endif]-->
 
   {# For Internet Explorer 8, you need to compile specific stylesheet #}

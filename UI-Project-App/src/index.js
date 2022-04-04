@@ -36,6 +36,10 @@ app.get('/home', (req, res) => {
   res.render('home')
 });
 
+app.get('/welcome', (req, res) => {
+  res.render('welcome')
+})
+
 app.post('/login', (req, res) => {
   loginController.validatePassword(req.body, res)
 });
