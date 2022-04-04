@@ -32,8 +32,8 @@ app.get('/', (req, res) => {
   res.render('home')
 });
 
-app.post('/', (req, res) => {
-  loginController.checkLogin(req.body, res)
+app.post('/login', (req, res) => {
+  loginController.validatePassword(req.body, res)
 });
 
 
