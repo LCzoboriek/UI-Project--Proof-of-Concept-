@@ -3,7 +3,7 @@ const {Client} = require('pg');
 const peopleClient = new Client({
     user: 'Luke',
     host: '192.168.50.50',
-    database: 'IICS-People',
+    database: 'iics',
     password: 'Defiance567/',
     port: 5445
 })
