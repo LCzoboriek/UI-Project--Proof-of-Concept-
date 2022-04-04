@@ -1,44 +1,42 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
-// const njk = require('njk');
 const app = express();
 const peopleClient = require('./db');
 const http = require('http');
 const body_parser = require('body-parser');
 const path = require('path');
-// const sass = require('sass');
 const PORT = 4000
-// const result = sass.compile('./test.scss');
+const loginController = require('./loginController');
+const user = require('./user.js');
+
 app.use(express.static(path.join('./public/')));
 app.use('/assets', express.static(path.join(__dirname, '../../assets')));
 app.use(body_parser.urlencoded({extended: false}));
 app.use(body_parser.json());
-// app.use('/static', express.static(__dirname + '/static'))
+
 app.set('views','./src/views'); // Path to where my views are located
 app.set('view engine','njk'); // Using a view engine and what one you are using
 
 nunjucks.configure(
-    [
-      "node_modules/govuk-frontend",
-      "./src/views",
-    ], 
-    {
-      autoescape: true,
-      express: app,
-    },
-  )
-
-
+  [
+    "node_modules/govuk-frontend",
+    "./src/views",
+  ], 
+  {
+    autoescape: true,
+    express: app,
+  },
+)
 
 app.get('/', (req, res) => {
-  // res.sendFile(path.join(__dirname, 'pages/test.njk'))
-  res.render('test')
-})
+  res.render('home')
+});
 
-
-
+app.post('/', (req, res) => {
+  loginController.checkLogin(req.body, res)
+});
 
 
 app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`);
+  console.log(`Listening on port ${PORT}`);
 });
