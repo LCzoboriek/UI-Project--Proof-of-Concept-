@@ -36,8 +36,12 @@ app.get('/home', (req, res) => {
   res.render('home')
 });
 
-app.get('/welcome', (req, res) => {
+app.get('/homehub', (req, res) => {
   res.render('homehub')
+})
+
+app.get('/nino-customer-check', (req, res) => {
+  res.render('nino-customer-check')
 })
 
 app.post('/login', (req, res) => {

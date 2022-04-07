@@ -1,0 +1,62 @@
+{% extends "govuk/template.njk" %}
+  {% block head %}
+    
+  <!--[if !IE 8]><!-->
+    
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  
+  homepageUrl: "welcome",
+  serviceName: "Customer Section",
+  serviceUrl: "welcome",
+  navigation: [
+    {
+      href: "help",
+      text: "Help",
+      active: true
+    },
+    {
+      href: "home",
+      text: "Logout"
+    }
+  ]
+}) }}
+{% endblock %}
+{% block content %}
+
+  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}  
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Login",
+      href: "home"
+    },
+    {
+      text: "Home Hub",
+      href: "/homehub"
+    }
+  ]
+}) }}
+  <h1 class="govuk-heading-xl">IICS Legacy Retrieval System</h1>
+
+
+
+{# Bottom of page #}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "If you are not authorized to be on this system, please sign out or risk fine or imprisonment ",
+  iconFallbackText: "Warning"
+}) }}
+
+
+{% endblock %}
+ 
+{% block bodyEnd %}
+  {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
+  <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+  <script src="/govuk-frontend/all.js"></script>
+  <script>window.GOVUKFrontend.initAll()</script>
+{% endblock %}
