@@ -37,7 +37,7 @@ app.get('/home', (req, res) => {
 });
 
 app.get('/welcome', (req, res) => {
-  res.render('welcome')
+  res.render('homehub')
 })
 
 app.post('/login', (req, res) => {

@@ -16,7 +16,7 @@ function validatePassword(params, res){
             } else {
                 let dbpassword = result.rows[0].password;
                 if(dbpassword === password){
-                    res.render('welcome');
+                    res.render('homehub');
                 } else {
                     res.render('home');
                 }
