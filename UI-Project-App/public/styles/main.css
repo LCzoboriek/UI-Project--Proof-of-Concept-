@@ -6534,4 +6534,109 @@ x:-moz-any-link {
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+
+
+.flex-container {
+  -webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+color: #0b0c0c;
+font-family: "nta",Arial,sans-serif;
+font-weight: 400;
+text-transform: none;
+-webkit-font-smoothing: antialiased;
+font-size: 19px;
+line-height: 1.31579;
+text-align: left;
+vertical-align: baseline;
+border: none;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: flex-start;
+padding: 0 15px;
+margin: 0 -15px;
+}
+.grid-row {
+  margin: 0 -15px;
+}
+
+.card {
+  padding: 15px;
+}
+.card .card-heading {
+  margin-top: 0;
+}
+
+.card-heading-customer, .card-heading-profile {
+  color: #005ea5;
+  font-size: 30px;
+  margin-bottom: 0.625em;
+}
+
+.card-body {
+  padding: 12px;
+}
+
+.card-body-customer{
+background-color: #f3efef86;
+color: #0b0c0c;
+font-family: "nta",Arial,sans-serif;
+font-weight: 400;
+text-transform: none;
+-webkit-font-smoothing: antialiased;
+line-height: 1.31579;
+text-align: left;
+font-size: 16px;
+vertical-align: baseline;
+border: none;
+margin: 0;
+padding: 12px;
+height: 350px;
+width: 300px;  
+border-bottom: 0px;}
+
+.card-body-profile{
+  background-color: #f3efef86;
+  color: #0b0c0c;
+  font-family: "nta",Arial,sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.31579;
+  text-align: left;
+  font-size: 16px;
+  vertical-align: baseline;
+  border: none;
+  margin: 0;
+  padding: 12px;
+  height: 350px;
+  width: 300px;  
+  border-bottom: 0px;}
+
+
+@media screen and (min-width:600px) and (max-width:900px) {
+  .card {
+    flex-basis: 45.99%;
+  }
+}
+
+.customer-link-click, .profile-link-click {
+-webkit-text-size-adjust: 100%;
+text-transform: none;
+-webkit-font-smoothing: antialiased;
+text-align: left;
+font-family: inherit;
+font-weight: normal;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+border: none;
+margin: 0;
+padding: 0;
+color: #1d70b8;
+font-size: 20px;
+line-height: 20px;
+text-decoration: none;
+margin-bottom: 0;
+border-bottom: 1px solid #c7dceb;
+display: inline;
+}
+
