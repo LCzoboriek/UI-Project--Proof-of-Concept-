@@ -7,6 +7,7 @@ const body_parser = require('body-parser');
 const path = require('path');
 const PORT = 4000
 const loginController = require('./loginController');
+const validateNino = require('./validateNino');
 const user = require('./user.js');
 
 app.use(express.static(path.join('./public/')));
@@ -46,6 +47,10 @@ app.get('/nino-customer-check', (req, res) => {
 
 app.post('/login', (req, res) => {
   loginController.validatePassword(req.body, res)
+});
+
+app.post('/nino-customer-check', (req, res) => {
+  validateNino.validateNino(req.body, res)
 });
 
 app.listen(PORT, () => {
