@@ -49,7 +49,7 @@ app.post('/login', (req, res) => {
   loginController.validatePassword(req.body, res)
 });
 
-app.post('/nino-customer-check', (req, res) => {
+app.post('/security-questions', (req, res) => {
   validateNino.validateNino(req.body, res)
 });
 

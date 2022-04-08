@@ -7,19 +7,16 @@ function validateNino(params, res){
     let tableName = 'people';
     let columnName = 'custidnino';
     let myQuery = `SELECT "${columnName}" FROM "${tableName}" WHERE ${columnName} = '${nino}'`;
-    console.log(myQuery);
+  
     client.query(myQuery,
         (error, result) => {
             if(error){
-                console.log('im in the if loop');
                 console.log(error);
             } else {
-                let dbnino = result.rows[0].custidnino;
-                console.log(dbnino);
+                let dbnino = result.rows[0].custidnino
                 if(dbnino === nino) {
                     res.render('security-question-screen');
                 } else {
-                    console.log('im in the else part');
                     res.render('nino-customer-check')
                 }
             }
