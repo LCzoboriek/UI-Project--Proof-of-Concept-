@@ -10,18 +10,41 @@
 {{ govukHeader({
   
   homepageUrl: "welcome",
-
+  serviceName: "Customer Section",
   serviceUrl: "welcome",
   navigation: [
- 
-    
+    {
+      href: "help",
+      text: "Help",
+      active: true
+    },
+    {
+      href: "home",
+      text: "Logout"
+    }
   ]
 }) }}
 {% endblock %}
 
 {% block content %}
-  
-<h1> im the screen youre meant to see </h1>
+  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}  
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Login",
+      href: "home"
+    },
+    {
+      text: "Home Hub",
+      href: "/homehub"
+    },
+    {
+      text: "Customer Nino Entry",
+      href: "/nino-customer-check"
+    }
+  ]
+}) }}  
+<h1 class="govuk-heading-xl"> Security Questions</h1>
 
 
 
