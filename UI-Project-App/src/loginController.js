@@ -4,11 +4,9 @@ const user = require('./user.js');
 function validatePassword(params, res){
     let userName = params.username;
     let password = params.password;
-    console.log(userName + password);
     let tableName = 'dwp-staff-users';
     let columnName = 'user_name';
     let myQuery = `SELECT password FROM "${tableName}" WHERE ${columnName} = '${userName}'`;
-    console.log(myQuery);
     client.query(myQuery, 
         (error, result) => {
             if(error){
