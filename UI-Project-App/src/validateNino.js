@@ -1,6 +1,7 @@
 const client = require('./db');
 const user = require('./user.js');
 
+
 function validateNino(params, res){
     let nino = params.nino;
     console.log(nino);
@@ -11,29 +12,18 @@ function validateNino(params, res){
     client.query(myQuery,
         (error, result) => {
             console.log(result.rowCount);
-            console.log('im inside the query');
             if(error){
                 console.log(error);
             } else {
                 if (result.rowCount > 0) {
-                    console.log('im inside the result.rowcount');
-                    let dbnino = result.rows[0].custidnino
-                    if(dbnino === nino) {
                         res.render('security-question-screen')
-                    } 
                 } else {
-                    res.render('nino-customer-check')
+                    console.log('nino-customer-check re render');
+                    res.render('nino-customer-check', {error: true})
                 }
-                // let dbnino = result.rows[0].custidnino
-                // if(dbnino === nino) {
-                //     res.render('security-question-screen');
-                // } else {
-                //     res.render('nino-customer-check')
-                // }
             }
         })
 }
-
 module.exports = {
     validateNino
 }

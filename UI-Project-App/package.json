@@ -30,7 +30,7 @@
     "nodemon": "^2.0.15"
   },
   "nodemonConfig": {
-    "watch": ["src/views"],
-    "ext": "njk"
+    "watch": ["src/views","src"],
+    "ext": "njk, js"
   }
 }

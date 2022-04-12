@@ -57,6 +57,24 @@
 </form>
 </br>
 
+{% if error %}
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary" id="govuk-error">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        The NINO you entered doesn't match anything on the database, please try again
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% endif %}
+
+
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 {{ govukInsetText({
