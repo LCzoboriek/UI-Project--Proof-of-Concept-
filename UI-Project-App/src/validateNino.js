@@ -16,7 +16,8 @@ function validateNino(params, res){
                 console.log(error);
             } else {
                 if (result.rowCount > 0) {
-                        res.render('security-question-screen')
+                    let myUser = new user
+                    res.render('security-question-screen')
                 } else {
                     console.log('nino-customer-check re render');
                     res.render('nino-customer-check', {error: true})
