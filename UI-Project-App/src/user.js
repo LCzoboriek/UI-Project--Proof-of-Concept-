@@ -33,160 +33,160 @@ class myUser {
         this.securityquestion3 = securityquestion3
     } 
 
-    get custidnino(){
+    get customerNino(){
         return this.custidnino
     }
-    get custiddate(){
+    get customerDate(){
         return this.custiddate
     }
-    get custiddob(){
+    get customerDob(){
         return this.custiddob
     }
-    get custidforename(){
+    get customerFirstname(){
         return this.custidforename
     }
-    get custidsurname(){
+    get customerSurname(){
         return this.custidsurname
     }
-    get custidtitle(){
+    get customerTitle(){
         return this.custidtitle
     }
-    get entitlementsex(){
+    get customerSex(){
         return this.entitlementsex
     }
-    get custidaddress1(){
+    get customerAddress1(){
         return this.custidaddress1
     }
-    get custidaddress2(){
+    get customerAddress2(){
         return this.custidaddress1
     }
-    get custidaddress3(){
+    get customerAddress3(){
         return this.custidaddress1
     }
-    get custidaddress4(){
+    get customerAddress4(){
         return this.custidaddress4
     }
-    get appointeenino(){
+    get appointeeNino(){
         return this.appointeenino
     }
-    get appointeetitle(){
+    get appointeeTitle(){
         return this.appointeetitle
     }
-    get appointeeforename(){
+    get appointeeForename(){
         return this.appointeeforename
     }
-    get appointeesurname(){
+    get appointeeSurname(){
         return this.appointeesurname
     }
-    get appointeeaddress1(){
+    get appointeeAddress1(){
         return this.appointeeaddress1
     }
-    get appointeeaddress2(){
+    get appointeeAddress2(){
         return this.appointeeaddress2
     }
-    get appointeeaddress3(){
+    get appointeeAddress3(){
         return this.appointeeaddress3
     }
-    get appointeeaddress4(){
+    get appointeeAddress4(){
         return this.appointeeaddress4
     }
-    get custidclaimstatus(){
+    get customerClaimStatus(){
         return this.custidclaimstatus
     }
-    get custidcountrycode(){
+    get customerCountryCode(){
         return this.custidcountrycode
     }
-    get payeebanksortcode(){
+    get customerBankSortCode(){
         return this.payeebanksortcode
     }
-    get payeebankaccno(){
+    get customerPayeeBankAccNo(){
         return this.payeebankaccno
     }
-    get securityquestion1(){
+    get customerSecurityQuestion1(){
         return this.securityquestion1
     }
-    get securityquestion2(){
+    get customerSecurityQuestion2(){
         return this.securityquestion2
     }
-    get securityquestion3(){
+    get customerSecurityQuestion3(){
         return this.securityquestion3
     }
-    set appointeeaddress1(appointeeaddress1){
+    set appointeeAddress1(appointeeaddress1){
         this.appointeeaddress1 = appointeeaddress1
     }
-    set appointeeaddress3(appointeeaddress3){
+    set appointeeAddress3(appointeeaddress3){
         this.appointeeaddress3 = appointeeaddress3
     }
-    set appointeeaddress4(appointeeaddress4){
+    set appointeeAddress4(appointeeaddress4){
         this.appointeeaddress4 = appointeeaddress4
     }
-    set custidcountrycode(custidcountrycode){
+    set customerCountryCode(custidcountrycode){
         this.custidcountrycode = custidcountrycode
     }
-    set appointeeforename(appointeeforename){
+    set appointeeForename(appointeeforename){
         this.appointeeforename = appointeeforename
     }
-    set custidclaimstatus(custidclaimstatus){
+    set customerClaimStatus(custidclaimstatus){
         this.custidclaimstatus = custidclaimstatus
     }
-    set appointeeaddress2(appointeeaddress2){
+    set appointeeAddress2(appointeeaddress2){
         this.appointeeaddress2 = appointeeaddress2
     }
-    set payeebankaccno(payeebankaccno){
+    set customerBankAccNo(payeebankaccno){
         this.payeebankaccno = payeebankaccno
     }
-    set securityquestion1(securityquestion1){
+    set customerSecurityQuestion1(securityquestion1){
         this.securityquestion1 = securityquestion1
     }
-    set custidnino(custidnino){
+    set customerNino(custidnino){
         this.custidnino = custidnino
     }
-    set securityquestion3(securityquestion3){
+    set SecurityQuestion3(securityquestion3){
         this.securityquestion3 = securityquestion3
     }
-    set custiddate(custiddate){
+    set customerDate(custiddate){
         this.custiddate = custiddate
     }
-    set securityquestion2(securityquestion2){
+    set customerSecurityQuestion2(securityquestion2){
         this.securityquestion2 = securityquestion2
     }
-    set payeebanksortcode(payeebanksortcode){
+    set customerBankSortCode(payeebanksortcode){
         this.payeebanksortcode = payeebanksortcode
     }
-    set appointeesurname(appointeesurname){
+    set appointeeSurname(appointeesurname){
         this.appointeesurname = appointeesurname
     }
-    set appointeetitle(appointeetitle){
+    set appointeeTitle(appointeetitle){
         this.appointeetitle = appointeetitle
     }
-    set appointeenino(appointeenino){
+    set appointeeNino(appointeenino){
         this.appointeenino = appointeenino
     }
-    set custidaddress4(custidaddress4){
+    set customerAddress4(custidaddress4){
         this.custidaddress4 = custidaddress4
     }
-    set custidaddress3(custidaddress3){
+    set customerAddress3(custidaddress3){
         this.custidaddress3 = custidaddress3
     }
-    set custidaddress2(custidaddress2){
+    set customerAddress2(custidaddress2){
         this.custidaddress2 = custidaddress2
     }
-    set custidaddress1(custidaddress1){
+    set customerAddress1(custidaddress1){
         this.custidaddress1 = custidaddress1
     }
-    set entitlementsex(entitlementsex){
+    set customerSex(entitlementsex){
         this.entitlementsex = entitlementsex
     }
-    set custidtitle(custidtitle){
+    set customerTitle(custidtitle){
         this.custidtitle = custidtitle
     }
-    set custidsurname(custidsurname){
+    set customerSurname(custidsurname){
         this.custidsurname = custidsurname
     }
-    set custidforename(custidforename){
+    set customerForename(custidforename){
         this.custidforename = custidforename
     }
-    set custiddob(custiddob){
+    set customerDob(custiddob){
         this.custiddob = custiddob
     }
 }
