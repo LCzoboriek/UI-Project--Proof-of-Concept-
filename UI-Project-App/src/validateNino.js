@@ -25,7 +25,6 @@ function validateNino(params, res){
                         if(error){
                             
                         } else {
-                            
                             myUser.setcustomerNino = result.rows[0].custidnino
                             myUser.setcustomerDate = result.rows[0].custiddate
                             myUser.setcustomerDob = result.rows[0].custiddob
