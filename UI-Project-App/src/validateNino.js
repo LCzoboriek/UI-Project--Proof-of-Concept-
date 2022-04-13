@@ -1,7 +1,6 @@
 const client = require('./db');
-const myUser = require('./user.js');
 const user = require('./user.js');
-let myUser2 = new user;
+let myUser = new user;
 
 function validateNino(params, res){
     let nino = params.nino;
@@ -9,16 +8,13 @@ function validateNino(params, res){
     let tableName = 'people';
     let columnName = 'custidnino';
     let myQuery = `SELECT "${columnName}" FROM "${tableName}" WHERE ${columnName} = '${nino}'`;
-
     client.query(myQuery,
         (error, result) => {
             if(error){
                 console.log(error);
             } else {
                 if (result.rowCount > 0) {
-                    console.log('im just before assigning new user');
-                    let myUser = new user
-                    console.log('im just after assigning user');
+                    console.table(result);
                     res.render('security-question-screen')
                     console.log('im just after rendering the security question screen');
                     let nino = params.nino
@@ -30,36 +26,36 @@ function validateNino(params, res){
                         if(error){
                             console.log(error);
                         } else {
-                            myUser.setcustidnino = result.rows[0].custidnino
-                            myUser.setcustiddate = result.rows[0].custiddate
-                            myUser.setcustiddob = result.rows[0].custiddob
-                            myUser.setcustidforename = result.rows[0].custidforename
-                            myUser.setcustidsurname = result.rows[0].custidsurname
-                            myUser.setcustidtitle = result.rows[0].custidtitle
-                            myUser.setentitlementsex = result.rows[0].entitlementsex
-                            myUser.setcustidaddress1 = result.rows[0].custidaddress1
-                            myUser.setcustidaddress2 = result.rows[0].custidaddress2
-                            myUser.setcustidaddress3 = result.rows[0].custidaddress3
-                            myUser.setcustidaddress4 = result.rows[0].custidaddress4
-                            myUser.setappointeenino = result.rows[0].appointeenino
-                            myUser.setappointeetitle = result.rows[0].appointeetitle
-                            myUser.setappointeeforename = result.rows[0].appointeeforename
-                            myUser.setappointeesurname = result.rows[0].appointeesurname
-                            myUser.setappointeeaddress1 = result.rows[0].appointeeaddress1
-                            myUser.setappointeeaddress2 = result.rows[0].appointeeaddress2
-                            myUser.setappointeeaddress3 = result.rows[0].appointeeaddress3
-                            myUser.setappointeeaddress4 = result.rows[0].appointeeaddress4
-                            myUser.setcustidclaimstatus = result.rows[0].custidclaimstatus
-                            myUser.setcustidcountrycode = result.rows[0].custidcountrycode
-                            myUser.setpayeebanksortcode = result.rows[0].payeebanksortcode
-                            myUser.setpayeebankaccno = result.rows[0].payeebankaccno
-                            myUser.setsecurityquestion1 = result.rows[0].securityquestion1
-                            myUser.setsecurityquestion2 = result.rows[0].securityquestion2
-                            myUser.setsecurityquestion3 = result.rows[0].securityquestion3
+                            console.table(result);
+                            // myUser.setcustidnino = result.rows[0].custidnino
+                            // myUser.setcustiddate = result.rows[0].custiddate
+                            // myUser.setcustiddob = result.rows[0].custiddob
+                            // myUser.setcustidforename = result.rows[0].custidforename
+                            // myUser.setcustidsurname = result.rows[0].custidsurname
+                            // myUser.setcustidtitle = result.rows[0].custidtitle
+                            // myUser.setentitlementsex = result.rows[0].entitlementsex
+                            // myUser.setcustidaddress1 = result.rows[0].custidaddress1
+                            // myUser.setcustidaddress2 = result.rows[0].custidaddress2
+                            // myUser.setcustidaddress3 = result.rows[0].custidaddress3
+                            // myUser.setcustidaddress4 = result.rows[0].custidaddress4
+                            // myUser.setappointeenino = result.rows[0].appointeenino
+                            // myUser.setappointeetitle = result.rows[0].appointeetitle
+                            // myUser.setappointeeforename = result.rows[0].appointeeforename
+                            // myUser.setappointeesurname = result.rows[0].appointeesurname
+                            // myUser.setappointeeaddress1 = result.rows[0].appointeeaddress1
+                            // myUser.setappointeeaddress2 = result.rows[0].appointeeaddress2
+                            // myUser.setappointeeaddress3 = result.rows[0].appointeeaddress3
+                            // myUser.setappointeeaddress4 = result.rows[0].appointeeaddress4
+                            // myUser.setcustidclaimstatus = result.rows[0].custidclaimstatus
+                            // myUser.setcustidcountrycode = result.rows[0].custidcountrycode
+                            // myUser.setpayeebanksortcode = result.rows[0].payeebanksortcode
+                            // myUser.setpayeebankaccno = result.rows[0].payeebankaccno
+                            // myUser.setsecurityquestion1 = result.rows[0].securityquestion1
+                            // myUser.setsecurityquestion2 = result.rows[0].securityquestion2
+                            // myUser.setsecurityquestion3 = result.rows[0].securityquestion3
                             res.render('security-question-screen')
                         }
                     })
->>>>>>> f03a0c5deaeba7474ea8889e4ead5167e1aea681
                 } else {
                     console.log('nino-customer-check re render');
                     res.render('nino-customer-check', {error: true})

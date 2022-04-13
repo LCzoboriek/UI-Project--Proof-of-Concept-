@@ -3,32 +3,33 @@ class myUser {
         custidtitle, entitlementsex, custidaddress1, custidaddress2, custidaddress3, 
         custidaddress4, appointeenino, appointeetitle, appointeeforename, appointeesurname, 
         appointeeaddress1, appointeeaddress2, appointeeaddress3, appointeeaddress4, custidclaimstatus,
-        custidcountrycode, payeebanksortcode, payeebankaccno, securityquestion1, securityquestion2, securityquestion3){
-        this.custidnino = custidnino,
-        this.custiddate = custiddate,
-        this.custiddob = custiddob,
-        this.custidforename = custidforename,
-        this.custidsurname = custidsurname,
-        this.custidtitle = custidtitle,
-        this.entitlementsex = entitlementsex,
-        this.custidaddress1 = custidaddress1,
-        this.custidaddress2 = custidaddress2,
-        this.custidaddress3 = custidaddress3,
-        this.custidaddress4 = custidaddress4,
-        this.appointeenino = appointeenino,
-        this.appointeetitle = appointeetitle,
-        this.appointeeforename = appointeeforename,
-        this.appointeesurname = appointeesurname,
-        this.appointeeaddress1 = appointeeaddress1,
-        this.appointeeaddress2 = appointeeaddress2,
-        this.appointeeaddress3 = appointeeaddress3,
-        this.appointeeaddress4 = appointeeaddress4,
-        this.custidclaimstatus = custidclaimstatus,
-        this.custidcountrycode = custidcountrycode,
-        this.payeebanksortcode = payeebanksortcode,
-        this.payeebankaccno = payeebankaccno,
-        this.securityquestion1 = securityquestion1,
-        this.securityquestion2 = securityquestion2,
+        custidcountrycode, payeebanksortcode, payeebankaccno, securityquestion1, securityquestion2, securityquestion3)
+    {
+        this.custidnino = custidnino;
+        this.custiddate = custiddate;
+        this.custiddob = custiddob;
+        this.custidforename = custidforename;
+        this.custidsurname = custidsurname;
+        this.custidtitle = custidtitle;
+        this.entitlementsex = entitlementsex;
+        this.custidaddress1 = custidaddress1;
+        this.custidaddress2 = custidaddress2;
+        this.custidaddress3 = custidaddress3;
+        this.custidaddress4 = custidaddress4;
+        this.appointeenino = appointeenino;
+        this.appointeetitle = appointeetitle;
+        this.appointeeforename = appointeeforename;
+        this.appointeesurname = appointeesurname;
+        this.appointeeaddress1 = appointeeaddress1;
+        this.appointeeaddress2 = appointeeaddress2;
+        this.appointeeaddress3 = appointeeaddress3;
+        this.appointeeaddress4 = appointeeaddress4;
+        this.custidclaimstatus = custidclaimstatus;
+        this.custidcountrycode = custidcountrycode;
+        this.payeebanksortcode = payeebanksortcode;
+        this.payeebankaccno = payeebankaccno;
+        this.securityquestion1 = securityquestion1;
+        this.securityquestion2 = securityquestion2;
         this.securityquestion3 = securityquestion3
     } 
 
