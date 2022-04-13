@@ -12,9 +12,12 @@ function validatePassword(params, res){
             if(error){
                 console.log(error);
             } else {
+                console.log('im just before assigning the dbpassword = result.rows');
                 let dbpassword = result.rows[0].password;
                 if(dbpassword === password){
+                    console.log('im just before rendering home hub');
                     res.render('homehub');
+                    console.log('im just after rendering home hub');
                 } else {
                     res.render('home');
                 }

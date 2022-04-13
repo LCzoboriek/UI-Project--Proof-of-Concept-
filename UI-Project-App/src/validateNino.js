@@ -11,13 +11,15 @@ function validateNino(params, res){
 
     client.query(myQuery,
         (error, result) => {
-            console.log(result.rowCount);
             if(error){
                 console.log(error);
             } else {
                 if (result.rowCount > 0) {
+                    console.log('im just before assigning new user');
                     let myUser = new user
+                    console.log('im just after assigning user');
                     res.render('security-question-screen')
+                    console.log('im just after rendering the security question screen');
                 } else {
                     console.log('nino-customer-check re render');
                     res.render('nino-customer-check', {error: true})
