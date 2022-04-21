@@ -49,44 +49,18 @@
     {
       text: "Home Hub",
       href: "/homehub"
+    },
+    {
+      text: "NINO Customer Check",
+      href: "/nino-customer-check"
+    },
+    {
+      text: "Customer Hub",
+      href: "/customerHub"
     }
   ]
 }) }}
-  <h1 class="govuk-heading-xl">IICS Legacy Retrieval System</h1>
-  
-  <div class="flex-container grid-row">
-    <div class="card" id="customer">
-      <div class="card-body active card-body-customer" id="customer-tab">
-        <h3 class="heading-small card-heading card-heading-customer"> Customer Tab </h3>
-        </br>
-        </br>
-        </br>
-        <a class = "customer-link-click" href="/nino-customer-check" data-ga-event-category="link - click" 
-        data-ga-event-action="Income">
-        Customers Nino Entry</a>
-      </div>
-    </div>
-    <div class="card" id="profile-card">
-    <div class="card-body active card-body-profile" id="profile-tab">
-      <h3 class="heading-small card-heading card-heading-profile"> Profile Options </h3>
-      </br>
-      </br>
-      </br>
-      <a class= "profile-link-click" href="/profile-edit">
-      Edit Profile
-      </a>
-    </div>
-    </div>
-    <div class="card" id="profile-card">
-    <div class="card-body active card-body-profile" id="profile-tab">
-      <h3 class="heading-small card-heading card-heading-profile"> Benefit Detail Overview </h3>
-      </br>
-      <a class= "profile-link-click" href="/profile-edit">
-      Benefits
-      </a>
-    </div>
-    </div>
-  </div>
+
 
   {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 

@@ -10,17 +10,18 @@ const {securityQuery} = require('./databaseQueries')
 async function validateSecurityQuestions(myUser, params, res){
     console.log(myUser.custidnino + 'im logging the cust id nino within validate security questions');
     await securityQuery(myUser.custidnino)
-    console.log(myUser.securityquestion1);
-        if(myUser.securityquestion1 === params.securityquestion1 &&
-            myUser.securityquestion2 === params.securityquestion2 &&
-            myUser.securityquestion3 === params.securityquestion3){
-                console.log('in the if statement');
-            } else {
-                // res.render('security-question-screen')
-                console.log('failed security questions');
-            }
+    if(myUser.getCustomerSecurityQuestion1 === params.securityquestion1 &&
+        myUser.getCustomerSecurityQuestion2 === params.securityquestion2 &&
+        myUser.getCustomerSecurityQuestion3 === params.securityquestion3){
+            console.log('it matched!');
+            res.render('./customerHub')
+        } else {
+            console.log('it didnt match!');
+            res.render('./nino-customer-check')
+        }
     }
     
+
 module.exports = {
     validateSecurityQuestions
 }

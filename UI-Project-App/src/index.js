@@ -50,9 +50,13 @@ app.post('/login', (req, res) => {
   loginController.validatePassword(req.body, res)
 });
 
-app.post('/security-questions', (req, res) => {
+app.post('/nino-customer-check', (req, res) => {
   validateNino.validateNino(req.body, res)
 });
+
+app.get('/customerHub', (req, res) => {
+  res.render('customerHub')
+})
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
