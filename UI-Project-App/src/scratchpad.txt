@@ -1,0 +1,29 @@
+const newUser = (req,res) => {
+    let username = req.body.uname;
+    let password = req.body.pword;
+    encryptPassword(password)
+    .then(result => {
+        createUser({username,password, result})
+        .then(() => res.render('login', {message: 'User Account Successfully Created. Please login!'}))
+        .catch(error => {
+            let dberror = dberrorhandle(error.constraint);
+            res.render('register', {message: dberror});
+            });
+        })
+        .catch(() => res.status(500).send('error'));
+    }
+
+.then is the result of the promise,
+
+createUser is a promise, if it returns successful its .then or if its an error .catch
+
+
+const createUser = ({username, password, result}) => {
+    let tableName = 'MyNodeTable';
+    return client.query(
+        `INSERT INTO"${tableName}" (username, password, password2) VALUES ('${username}', '${password}', '${result}')`
+    );
+   }
+
+async and awaits are for stubbing and tests if interacting with databases
+

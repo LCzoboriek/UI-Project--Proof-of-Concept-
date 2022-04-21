@@ -6,6 +6,7 @@ function validatePassword(params, res){
     let password = params.password;
     let tableName = 'dwp-staff-users';
     let columnName = 'user_name';
+    //seperate out the database logic away from this, .thens being used again
     let myQuery = `SELECT password FROM "${tableName}" WHERE ${columnName} = '${userName}'`;
     client.query(myQuery, 
         (error, result) => {

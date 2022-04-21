@@ -1,0 +1,106 @@
+  {% extends "govuk/template.njk" %}
+  {% block head %}
+    
+  <!--[if !IE 8]><!-->
+    
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  
+  homepageUrl: "welcome",
+  serviceName: "Home Hub",
+  serviceUrl: "welcome",
+  navigation: [
+    {
+      href: "help",
+      text: "Help",
+      active: true
+    },
+    {
+      href: "home",
+      text: "Logout"
+    }
+  ]
+}) }}
+  <!--<![endif]-->
+
+  {# For Internet Explorer 8, you need to compile specific stylesheet #}
+  {# see https://frontend.design-system.service.gov.uk/supporting-ie8/#support-internet-explorer-8 #}
+  <!--[if IE 8]>
+    <link href="/govuk-frontend/all-ie8.css" rel="stylesheet">
+  <![endif]-->
+
+  {# For older browsers to allow them to recognise HTML5 elements such as `<header>` #}
+  <!--[if lt IE 9]>
+    <script src="/html5-shiv/html5shiv.js"></script>
+  <![endif]-->
+{% endblock %}
+
+{% block content %}
+
+  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}  
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Login",
+      href: "home"
+    },
+    {
+      text: "Home Hub",
+      href: "/homehub"
+    }
+  ]
+}) }}
+  <h1 class="govuk-heading-xl">IICS Legacy Retrieval System</h1>
+  
+  <div class="flex-container grid-row">
+    <div class="card" id="customer">
+      <div class="card-body active card-body-customer" id="customer-tab">
+        <h3 class="heading-small card-heading card-heading-customer"> Customer Tab </h3>
+        </br>
+        </br>
+        </br>
+        <a class = "customer-link-click" href="/nino-customer-check" data-ga-event-category="link - click" 
+        data-ga-event-action="Income">
+        Customers Nino Entry</a>
+      </div>
+    </div>
+    <div class="card" id="profile-card">
+    <div class="card-body active card-body-profile" id="profile-tab">
+      <h3 class="heading-small card-heading card-heading-profile"> Profile Options </h3>
+      </br>
+      </br>
+      </br>
+      <a class= "profile-link-click" href="/profile-edit">
+      Edit Profile
+      </a>
+    </div>
+    </div>
+    <div class="card" id="profile-card">
+    <div class="card-body active card-body-profile" id="profile-tab">
+      <h3 class="heading-small card-heading card-heading-profile"> Benefit Detail Overview </h3>
+      </br>
+      <a class= "profile-link-click" href="/profile-edit">
+      Benefits
+      </a>
+    </div>
+    </div>
+  </div>
+
+  {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "If you are not authorized to be on this system, please sign out or risk fine or imprisonment ",
+  iconFallbackText: "Warning"
+}) }}
+
+
+{% endblock %}
+ 
+{% block bodyEnd %}
+  {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
+  <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+  <script src="/govuk-frontend/all.js"></script>
+  <script>window.GOVUKFrontend.initAll()</script>
+{% endblock %}

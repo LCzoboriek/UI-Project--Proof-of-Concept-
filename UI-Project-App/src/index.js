@@ -9,6 +9,7 @@ const PORT = 4000
 const loginController = require('./loginController');
 const validateNino = require('./validateNino');
 const user = require('./user.js');
+let myUser = new user;
 
 app.use(express.static(path.join('./public/')));
 app.use('/assets', express.static(path.join(__dirname, '../../assets')));
