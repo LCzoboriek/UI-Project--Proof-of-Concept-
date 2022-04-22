@@ -15,6 +15,7 @@ async function validateSecurityQuestions(myUser, params, res){
         myUser.getCustomerSecurityQuestion3 === params.securityquestion3){
             console.log('it matched!');
             res.render('./customerHub')
+            console.log(myUser);
         } else {
             console.log('it didnt match!');
             res.render('./nino-customer-check')
