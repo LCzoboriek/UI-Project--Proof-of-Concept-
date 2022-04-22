@@ -14,7 +14,6 @@ const assigningQuery = (nino) => {
                      custidaddress2, custidaddress3, custidaddress4, appointeenino, appointeetitle, appointeeforename, appointeesurname, appointeeaddress1,
                      appointeeaddress2, appointeeaddress3, appointeeaddress4, custidclaimstatus, custidcountrycode, payeebanksortcode, payeebankaccno,
                      securityquestion1, securityquestion2, securityquestion3 FROM people WHERE custidnino = '${nino}'`);
-
 }
 
 const securityQuery = async (nino) => {
