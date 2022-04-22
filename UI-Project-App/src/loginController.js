@@ -19,9 +19,8 @@ function validatePassword(params, res){
                 if(dbpassword === password){
                     console.log('im just before rendering home hub');
                     sessions.userName = userName
-                    sessions.password = password
                     res.render('homehub');
-                    console.log('im just after rendering home hub' + sessions.userName + sessions.password);
+                    console.log('im just after rendering home hub' + sessions.userName);
                 } else {
                     res.render('home');
                 }

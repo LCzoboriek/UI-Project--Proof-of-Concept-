@@ -18,6 +18,7 @@ function validateNino(params, res){
             assigningQuery(params.nino)
             .then( result => {
                 myUser = databaseAssigning(result, myUser)
+                console.log(myUser);
                 validateSecurityQuestions(myUser, params, res)
             })
             .catch(error => {

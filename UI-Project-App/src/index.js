@@ -60,7 +60,8 @@ app.get('/homehub', (req, res) => {
 })
 
 app.get('/nino-customer-check', (req, res) => {
-  if(sessions.userName != ''){
+  session = req.session
+  if(session.userName != ''){
     res.render('nino-customer-check')}
   else {
     res.redirect('/')
@@ -93,3 +94,4 @@ app.listen(PORT, () => {
 
 //Questions for Karls sessions
 //How do i make sure that the user cannot access any page unless they are logged in
+
