@@ -14,6 +14,8 @@ async function validateSecurityQuestions(myUser, params, res){
         myUser.getCustomerSecurityQuestion2 === params.securityquestion2 &&
         myUser.getCustomerSecurityQuestion3 === params.securityquestion3){
             console.log('it matched!');
+            res.locals.myUser = myUser; //Locals stores data in session, temporary storage in express
+            //passing data from one middleware to another middleware, you can chain them together
             res.render('./customerHub')
             console.log(myUser);
         } else {
