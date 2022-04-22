@@ -19,9 +19,6 @@ const assigningQuery = (nino) => {
 
 const securityQuery = async (nino) => {
     let result = await client.query(`SELECT securityquestion1, securityquestion2, securityquestion3 FROM people WHERE custidnino = '${nino}'`);
-    myUser.setSecurityQuestion1 = result.rows[0].securityquestion1
-    myUser.setSecurityQuestion2 = result.rows[0].securityquestion2
-    myUser.setSecurityQuestion3 = result.rows[0].securityquestion3
     return result
 }
         

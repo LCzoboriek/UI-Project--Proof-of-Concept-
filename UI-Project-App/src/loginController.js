@@ -1,5 +1,6 @@
 const client = require('./db');
 const user = require('./user.js');
+const sessions = require('express-session')
 
 function validatePassword(params, res){
     let userName = params.username;
@@ -17,8 +18,10 @@ function validatePassword(params, res){
                 let dbpassword = result.rows[0].password;
                 if(dbpassword === password){
                     console.log('im just before rendering home hub');
+                    sessions.userName = userName
+                    sessions.password = password
                     res.render('homehub');
-                    console.log('im just after rendering home hub');
+                    console.log('im just after rendering home hub' + sessions.userName + sessions.password);
                 } else {
                     res.render('home');
                 }
