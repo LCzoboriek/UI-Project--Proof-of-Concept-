@@ -26,12 +26,9 @@ function validatePassword(params, res){
         })
 }
 
-const editprofile = (req, res) => {
-    console.log(sessions.password);
-    res.render('edit-profile')
-}
 
 const changePassword = (req, res) => {
+    res.render('change-password')
     let password = sessions.password
     let newPassword  = params.password
     let columnName = 'password'
@@ -47,12 +44,12 @@ const changePassword = (req, res) => {
                 if(error){
                     console.log(error);
                 } else {
-                    res.render('home')
+                    console.log('Succedeed');
                 }
             })
     }
 }
 
 module.exports = {
-    validatePassword, editprofile, changePassword
+    validatePassword, changePassword
 }
