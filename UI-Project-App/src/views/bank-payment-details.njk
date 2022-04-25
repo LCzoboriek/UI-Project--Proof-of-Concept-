@@ -18,7 +18,7 @@
       active: true
     },
     {
-      href: "logout",
+      href: "home",
       text: "Logout"
     }
   ]
@@ -49,56 +49,52 @@
     {
       text: "Home Hub",
       href: "/homehub"
+    },
+    {
+      text: "NINO Customer Check",
+      href: "/nino-customer-check"
+    },
+    {
+      text: "Customer Hub",
+      href: "/customerHub"
     }
   ]
 }) }}
-  <h1 class="govuk-heading-xl">IICS Legacy Retrieval System</h1>
-  
-  <div class="flex-container grid-row">
-    <div class="card" id="profile-card">
-      <div class="card-body active card-body-profile" id="person-tab">
-        <h3 class="heading-small card-heading card-heading-customer"> Person Details </h3>
-        </br>
-        </br>
-        </br>
- 
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
 
-        <a class = "customer-link-click" href="/overview-details" data-ga-event-category="link - click" 
-        data-ga-event-action="Income">
-        Overview Details
-        </a>
-        </br>
-        </br>
-        <a class = "customer-link-click" href="/person-address-details" data-ga-event-category="link - click" 
-        data-ga-event-action="Income">
-        Address Details
-        </a>
-      </div>
-    </div>
-    <div class="card" id="profile-card">
-    <div class="card-body active card-body-profile" id="appointee-tab">
-      <h3 class="heading-small card-heading card-heading-profile"> Appointee Details </h3>
-      </br>
 
-      <a class= "profile-link-click" href="/appointee-overview">
-      Overview Details
-      </a>
-    </div>
-    </div>
-    <div class="card" id="profile-card">
-    <div class="card-body active card-body-profile" id="payment-tab">
-      <h3 class="heading-small card-heading card-heading-profile"> Payment Details </h3>
-      </br>
-      </br>
-      </br>
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-      <a class= "profile-link-click" href="/bank-payment-details">
-      Payment Information
-      </a>
-    </div>
-    </div>
-    
-  </div>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Bank Account Number"
+      },
+      value: {
+        text: myUser.payeebankaccno
+      },
+      actions: {
+        items: [
+          
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Bank Sort Code"
+      },
+      value: {
+        text: myUser.payeebanksortcode
+      },
+      actions: {
+        items: [
+          
+        ]
+      }
+    }
+  ]
+}) }}
 
   {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 

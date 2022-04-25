@@ -18,6 +18,7 @@ function validateNino(params, res){
             assigningQuery(params.nino)
             .then( result => {
                 myUser = databaseAssigning(result, myUser)
+                console.log('im within validate nino');
                 console.log(myUser);
                 validateSecurityQuestions(myUser, params, res)
             })
@@ -32,6 +33,27 @@ function validateNino(params, res){
     });
 }
 
+const displayOverviewDetails = (req, res) => {
+    console.log(myUser);
+    res.locals.myUser = myUser
+    res.render('person-overview')
+}
+
+const displayAddressDetails = (req, res) => {
+    res.locals.myUser = myUser
+    res.render('person-address-details')
+}
+
+const displayPaymentDetails = (req, res) => {
+    res.locals.myUser = myUser
+    res.render('bank-payment-details')
+}
+
+const displayAppointeeDetails = (req, res) => {
+    res.locals.myUser = myUser
+    res.render('appointee-overview')
+}
+
 module.exports = {
-    validateNino
+    validateNino,  displayOverviewDetails, displayAddressDetails, displayPaymentDetails, displayAppointeeDetails
 }

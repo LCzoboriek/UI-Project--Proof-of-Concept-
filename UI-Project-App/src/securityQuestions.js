@@ -18,7 +18,7 @@ async function validateSecurityQuestions(myUser, params, res){
             res.locals.myUser = myUser; //Locals stores data in session, temporary storage in express
             //passing data from one middleware to another middleware, you can chain them together
             res.render('./customerHub')
-            
+            console.log(myUser);
         } else {
             console.log('it didnt match!');
             res.render('./nino-customer-check')
@@ -26,7 +26,12 @@ async function validateSecurityQuestions(myUser, params, res){
     }
     
 
+
+
+
+
+
 module.exports = {
-    validateSecurityQuestions, myUser
+    validateSecurityQuestions
 }
 

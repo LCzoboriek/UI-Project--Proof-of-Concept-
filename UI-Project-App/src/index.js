@@ -10,7 +10,6 @@ const cookieParser = require('cookie-parser')
 const PORT = 4000
 const loginController = require('./loginController');
 const validateNino = require('./validateNino');
-const displayPersonDetails = require('./displayPersonDetails');
 const checkUser = require('./checkUser')
 const user = require('./user.js');
 
@@ -89,8 +88,19 @@ app.get('/customerHub', (req, res) => {
 })
 
 app.get('/overview-details', (req, res) => {
-  displayPersonDetails.displayOverviewDetails(req, res)
-  res.render('person-overview')
+  validateNino.displayOverviewDetails(req, res);
+})
+
+app.get('/person-address-details', (req, res) => {
+  validateNino.displayAddressDetails(req, res)
+})
+
+app.get('/bank-payment-details', (req, res) => {
+  validateNino.displayPaymentDetails(req, res)
+})
+
+app.get('/appointee-overview', (req, res) => {
+  validateNino.displayAppointeeDetails(req, res)
 })
 
 app.listen(PORT, () => {
