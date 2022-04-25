@@ -1,0 +1,183 @@
+  {% extends "govuk/template.njk" %}
+  {% block head %}
+    
+  <!--[if !IE 8]><!-->
+    
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  
+  homepageUrl: "welcome",
+  serviceName: "Home Hub",
+  serviceUrl: "welcome",
+  navigation: [
+    {
+      href: "help",
+      text: "Help",
+      active: true
+    },
+    {
+      href: "home",
+      text: "Logout"
+    }
+  ]
+}) }}
+  <!--<![endif]-->
+
+  {# For Internet Explorer 8, you need to compile specific stylesheet #}
+  {# see https://frontend.design-system.service.gov.uk/supporting-ie8/#support-internet-explorer-8 #}
+  <!--[if IE 8]>
+    <link href="/govuk-frontend/all-ie8.css" rel="stylesheet">
+  <![endif]-->
+
+  {# For older browsers to allow them to recognise HTML5 elements such as `<header>` #}
+  <!--[if lt IE 9]>
+    <script src="/html5-shiv/html5shiv.js"></script>
+  <![endif]-->
+{% endblock %}
+
+{% block content %}
+
+  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}  
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Login",
+      href: "home"
+    },
+    {
+      text: "Home Hub",
+      href: "/homehub"
+    },
+    {
+      text: "NINO Customer Check",
+      href: "/nino-customer-check"
+    },
+    {
+      text: "Customer Hub",
+      href: "/customerHub"
+    }
+  ]
+}) }}
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "NINO"
+      },
+      value: {
+        text: myUser.custidnino
+      },
+      actions: {
+        items: [
+          
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of Application"
+      },
+      value: {
+        text: myUser.custiddate
+      },
+      actions: {
+        items: [
+          
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of Birth"
+      },
+      value: {
+        text: myUser.custiddob
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Title"
+      },
+      value: {
+        text: myUser.custidtitle
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Forename"
+      },
+      value: {
+        text: myUser.custidforename
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Surname"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+    
+  ]
+}) }}
+
+  {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "If you are not authorized to be on this system, please sign out or risk fine or imprisonment ",
+  iconFallbackText: "Warning"
+}) }}
+
+
+{% endblock %}
+ 
+{% block bodyEnd %}
+  {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
+  <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+  <script src="/govuk-frontend/all.js"></script>
+  <script>window.GOVUKFrontend.initAll()</script>
+{% endblock %}

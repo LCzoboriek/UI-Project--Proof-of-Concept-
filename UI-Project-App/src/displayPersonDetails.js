@@ -5,7 +5,7 @@ const {securityQuery} = require('./databaseQueries')
 
 function displayOverviewDetails(myUser, res){
     res.locals.myUser = myUser
-    console.log(myUser.custidnino);
+    console.log(myUser);
 }
 
 
