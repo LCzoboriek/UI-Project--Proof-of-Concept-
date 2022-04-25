@@ -83,6 +83,15 @@ app.post('/nino-customer-check', (req, res) => {
   validateNino.validateNino(req.body, res)
 });
 
+app.get('/edit-profile', (req, res)=>{
+  loginController.editprofile(req, res)
+})
+
+app.get('/change-password', (req, res)=> {
+  res.render('change-password')
+  loginController.changePassword(req, res)
+})
+
 app.get('/customerHub', (req, res) => {
   res.render('customerHub')
 })

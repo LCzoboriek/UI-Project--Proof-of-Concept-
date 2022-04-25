@@ -14,13 +14,11 @@ function validatePassword(params, res){
             if(error){
                 console.log(error);
             } else {
-                console.log('im just before assigning the dbpassword = result.rows');
                 let dbpassword = result.rows[0].password;
                 if(dbpassword === password){
-                    console.log('im just before rendering home hub');
                     sessions.userName = userName
+                    sessions.password = password
                     res.render('homehub');
-                    console.log('im just after rendering home hub' + sessions.userName);
                 } else {
                     res.render('home');
                 }
@@ -28,6 +26,33 @@ function validatePassword(params, res){
         })
 }
 
+const editprofile = (req, res) => {
+    console.log(sessions.password);
+    res.render('edit-profile')
+}
+
+const changePassword = (req, res) => {
+    let password = sessions.password
+    let newPassword  = params.password
+    let columnName = 'password'
+    let tableName = 'dwp-staff-users'
+    let userName = sessions.userName
+    let myQuery = `UPDATE ${tableName} SET password ='${newPassword}' WHERE ${columnName} = '${userName}'`
+    
+    if(newPassword === password){
+        console.log('the password is the same as the old one');
+    } else {
+        client.query(myQuery,
+            (error, result) => {
+                if(error){
+                    console.log(error);
+                } else {
+                    res.render('home')
+                }
+            })
+    }
+}
+
 module.exports = {
-    validatePassword
+    validatePassword, editprofile, changePassword
 }
