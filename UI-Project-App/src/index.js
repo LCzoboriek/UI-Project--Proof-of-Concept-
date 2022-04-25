@@ -87,6 +87,10 @@ app.get('/customerHub', (req, res) => {
   res.render('customerHub')
 })
 
+app.get('/overview-details', (req, res) => {
+  res.render('customer-overview')
+})
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
