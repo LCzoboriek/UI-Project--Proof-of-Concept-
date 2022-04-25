@@ -89,7 +89,7 @@ app.get('/customerHub', (req, res) => {
 })
 
 app.get('/overview-details', (req, res) => {
-  displayPersonDetails.displayOverviewDetails(myUser, req, res)
+  displayPersonDetails.displayOverviewDetails(req, res)
   res.render('person-overview')
 })
 
