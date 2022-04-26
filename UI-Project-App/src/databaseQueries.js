@@ -27,7 +27,11 @@ const updatePasswordInDb = (newPassword, userName) => {
     let columnName = 'user_name'
     return client.query(`UPDATE "${tableName}" SET password ='${newPassword}' WHERE ${columnName} = '${userName}' AND password != '${newPassword}`);
 }
+
+const countBenefitTypeInDb = () => {
+    return client.query(`SELECT benefittype, count(benefittype) FROM people GROUP by benefittype`)
+}
         
 module.exports = {
-    ninoQuery, assigningQuery, securityQuery, updatePasswordInDb   
+    ninoQuery, assigningQuery, securityQuery, updatePasswordInDb, countBenefitTypeInDb   
 }
