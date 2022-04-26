@@ -27,7 +27,8 @@ function validatePassword(params, res){
 }
 
 
-const changePassword = (req, res) => {
+function changePassword(req, res){
+    res.render('change-password')
     let password = sessions.password
     let newPassword  = params.password
     let columnName = 'password'
