@@ -88,6 +88,13 @@ app.get('/edit-profile', (req, res)=>{
 })
 
 app.get('/change-password', (req, res)=> {
+  if (!req.body.name) {
+    return res.status(400).json({
+      status: 'error',
+      error: 'req body cannot be empty',
+    });
+  }
+  res.render('change-password')
   loginController.changePassword(req, res)
 })
 
