@@ -83,6 +83,10 @@ app.post('/nino-customer-check', (req, res) => {
   validateNino.validateNino(req.body, res)
 });
 
+app.post('/change-password', (req, res) => {
+  loginController.updatePassword(req, res)
+})
+
 app.get('/edit-profile', (req, res)=>{
   res.render('edit-profile')
 })
@@ -109,6 +113,10 @@ app.get('/bank-payment-details', (req, res) => {
 
 app.get('/appointee-overview', (req, res) => {
   validateNino.displayAppointeeDetails(req, res)
+})
+
+app.get('/benefit-overview', (req, res) => {
+  res.render('benefit-overview')
 })
 
 app.listen(PORT, () => {

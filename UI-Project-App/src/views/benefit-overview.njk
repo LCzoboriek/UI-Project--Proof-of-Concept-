@@ -18,7 +18,7 @@
       active: true
     },
     {
-      href: "logout",
+      href: "home",
       text: "Logout"
     }
   ]
@@ -49,46 +49,46 @@
     {
       text: "Home Hub",
       href: "/homehub"
+    },
+    {
+      text: "NINO Customer Check",
+      href: "/nino-customer-check"
+    },
+    {
+      text: "Customer Hub",
+      href: "/customerHub"
     }
   ]
 }) }}
-  <h1 class="govuk-heading-xl">IICS Legacy Retrieval System</h1>
-  
-  <div class="flex-container grid-row">
-    <div class="card" id="customer">
-      <div class="card-body active card-body-customer" id="customer-tab">
-        <h3 class="heading-small card-heading card-heading-customer"> Customer Tab </h3>
-        </br>
-        </br>
-        </br>
-        <a class = "customer-link-click" href="/nino-customer-check" data-ga-event-category="link - click" 
-        data-ga-event-action="Income">
-        Customers Nino Entry</a>
-      </div>
-    </div>
-    <div class="card" id="profile-card">
-    <div class="card-body active card-body-profile" id="profile-tab">
-      <h3 class="heading-small card-heading card-heading-profile"> Profile Options </h3>
-      </br>
-      </br>
-      </br>
-      <a class= "profile-link-click" href="/edit-profile">
-      Edit Profile
-      </a>
-    </div>
-    </div>
-    <div class="card" id="profile-card">
-    <div class="card-body active card-body-profile" id="profile-tab">
-      <h3 class="heading-small card-heading card-heading-profile"> Benefit Detail Overview </h3>
-      </br>
-      <a class= "profile-link-click" href="/benefit-overview">
-      Benefits
-      </a>
-    </div>
-    </div>
-  </div>
 
-  {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Date</th>
+      <th scope="col" class="govuk-table__header">Amount</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">First 6 weeks</th>
+      <td class="govuk-table__cell">£109.80 per week</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+      <td class="govuk-table__cell">£109.80 per week</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total estimated pay</th>
+      <td class="govuk-table__cell">£4,282.20</td>
+    </tr>
+  </tbody>
+</table>
+
+
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
 {{ govukWarningText({
   text: "If you are not authorized to be on this system, please sign out or risk fine or imprisonment ",

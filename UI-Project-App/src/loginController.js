@@ -1,6 +1,7 @@
 const client = require('./db');
 const user = require('./user.js');
 const sessions = require('express-session')
+const { updatePasswordInDb } = require('./databaseQueries')
 
 function validatePassword(params, res){
     let userName = params.username;
@@ -29,26 +30,22 @@ function validatePassword(params, res){
 
 function changePassword(req, res){
     res.render('change-password')
-    let password = sessions.password
-    let newPassword  = params.password
-    let columnName = 'password'
-    let tableName = 'dwp-staff-users'
-    let userName = sessions.userName
-    let myQuery = `UPDATE ${tableName} SET password ='${newPassword}' WHERE ${columnName} = '${userName}'`
-    if(newPassword === password){
-        console.log('the password is the same as the old one');
-    } else {
-        client.query(myQuery,
-            (error, result) => {
-                if(error){
-                    console.log(error);
-                } else {
-                    console.log('Succedeed');
-                }
-            })
-    }
 }
 
+const updatePassword = (req, res) => {
+    let newPassword = req.body.password
+    let userName = sessions.userName
+    updatePasswordInDb(newPassword, userName)
+    .then(result => {
+        res.render('home')
+    })
+    .catch(error => {
+        console.log(error);
+    })
+
+}
+
+
 module.exports = {
-    validatePassword, changePassword
+    validatePassword, changePassword, updatePassword
 }
