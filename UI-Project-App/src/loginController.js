@@ -35,7 +35,6 @@ const changePassword = (req, res) => {
     let tableName = 'dwp-staff-users'
     let userName = sessions.userName
     let myQuery = `UPDATE ${tableName} SET password ='${newPassword}' WHERE ${columnName} = '${userName}'`
-    
     if(newPassword === password){
         console.log('the password is the same as the old one');
     } else {
