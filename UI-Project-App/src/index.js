@@ -116,7 +116,7 @@ app.get('/appointee-overview', (req, res) => {
 })
 
 app.get('/benefit-overview', (req, res) => {
-  res.render('benefit-overview')
+  validateNino.displayBenefitDetails(req, res)
 })
 
 app.listen(PORT, () => {
