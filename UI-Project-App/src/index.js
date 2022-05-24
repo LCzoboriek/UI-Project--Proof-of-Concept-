@@ -70,6 +70,7 @@ app.get('/nino-customer-check', (req, res) => {
 
 app.get('/logout',(req, res) => {
   req.session.destroy();
+  console.log(session.username);
   console.log('ive destroyed the session');
   res.redirect('/');
 })

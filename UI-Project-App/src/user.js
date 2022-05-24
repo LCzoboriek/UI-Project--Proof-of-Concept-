@@ -191,3 +191,5 @@ class myUser {
     }
 }
 module.exports = myUser;
+
+//Getters and setters are encapsulation to ensure encapsultaion of relvant data into methods

@@ -1,7 +1,6 @@
 const client = require('./db');
 const user = require('./user.js');
 const {securityQuery} = require('./databaseQueries')
-let myUser = new user
 
 
 // Class user now needed as it needs to remember whats the currently logged in customer

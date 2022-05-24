@@ -3,7 +3,6 @@ const user = require('./user.js');
 let myUser = new user;
 
 const ninoQuery = (nino) => {
-    console.log(nino + ' this is the database queries js');
     let tableName = 'people';
     let columnName = 'custidnino';
     return client.query(`SELECT "${columnName}" FROM "${tableName}" WHERE ${columnName} = '${nino}'`)
@@ -17,7 +16,8 @@ const assigningQuery = (nino) => {
 }
 
 const securityQuery = async (nino) => {
-    let result = await client.query(`SELECT securityquestion1, securityquestion2, securityquestion3 FROM people WHERE custidnino = '${nino}'`);
+    let result = await client.query(`SELECT securityquestion1, 
+    securityquestion2, securityquestion3 FROM people WHERE custidnino = '${nino}'`);
     return result
 }
 

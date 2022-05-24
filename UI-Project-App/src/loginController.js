@@ -15,6 +15,7 @@ function validatePassword(params, res){
             if(error){
                 console.log(error);
             } else {
+                console.log(result);
                 let dbpassword = result.rows[0].password;
                 if(dbpassword === password){
                     sessions.userName = userName

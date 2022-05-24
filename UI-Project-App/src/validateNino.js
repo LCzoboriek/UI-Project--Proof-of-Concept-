@@ -20,8 +20,6 @@ function validateNino(params, res){
             assigningQuery(params.nino)
             .then( result => {
                 myUser = databaseAssigning(result, myUser)
-                console.log('im within validate nino');
-                console.log(myUser);
                 validateSecurityQuestions(myUser, params, res)
             })
             .catch(error => {
@@ -36,7 +34,6 @@ function validateNino(params, res){
 }
 
 const displayOverviewDetails = (req, res) => {
-    console.log(myUser);
     res.locals.myUser = myUser
     res.render('person-overview')
 }
@@ -69,7 +66,6 @@ const displayBenefitDetails = (req, res) => {
                 console.log(error);
             } else {
                 for(let i = 0; i < result.rowCount; i++){
-                console.log(result.rows[i].benefittype + ' ' + result.rows[i].count);
                 if(result.rows[i].benefittype == 'IIDB'){
                     IIDB = result.rows[i].count
                 } else if(result.rows[i].benefittype == 'OVIID'){

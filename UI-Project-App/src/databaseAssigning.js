@@ -1,7 +1,6 @@
 const client = require('./db');
 const user = require('./user.js');
 const {assigningQuery} = require ('./databaseQueries');
-// let myUser = new user;
 
 function databaseAssigning(result, myUser) {
     myUser.setCustomerNino = result.rows[0].custidnino
