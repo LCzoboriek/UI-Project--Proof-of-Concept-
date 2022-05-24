@@ -31,7 +31,18 @@ const updatePasswordInDb = (newPassword, userName) => {
 const countBenefitTypeInDb = () => {
     return client.query(`SELECT benefittype, count(benefittype) FROM people GROUP by benefittype`)
 }
+
+const getValidPassword = (userName) => {
+    let tableName = 'dwp-staff-users';
+    let columnName = 'user_name';
+    return client.query(`SELECT password FROM "${tableName}" WHERE ${columnName} = '${userName}'`);
+    
+}
+
+const getBenefitDetails = () => {
+    return client.query(`SELECT benefittype, count(benefittype) FROM people GROUP by benefittype`);
+}
         
 module.exports = {
-    ninoQuery, assigningQuery, securityQuery, updatePasswordInDb, countBenefitTypeInDb   
+    ninoQuery, assigningQuery, securityQuery, updatePasswordInDb, countBenefitTypeInDb, getValidPassword, getBenefitDetails   
 }

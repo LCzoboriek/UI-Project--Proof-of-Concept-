@@ -1,7 +1,5 @@
 const {expect} = require('chai');
-const sinon = require('sinon')
-const {validatePassword} = require('../src/loginController')
-const {databaseAssigning} = require('../src/databaseAssigning');
+const {databaseAssigning} = require('../src/webController');
 
 describe('database assigning', () => {
     let result = {

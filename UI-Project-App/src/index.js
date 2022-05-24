@@ -1,19 +1,14 @@
 const express = require('express');
 const nunjucks   = require('nunjucks');
 const app = express();
-const peopleClient = require('./db');
 const http = require('http');
 const body_parser = require('body-parser');
 const path = require('path');
 const sessions = require('express-session')
 const cookieParser = require('cookie-parser')
 const PORT = 4000
-const loginController = require('./loginController');
-const validateNino = require('./validateNino');
-const checkUser = require('./checkUser')
 const user = require('./user.js');
-
-let myUser = new user;
+const webController = require('./webController');
 
 app.use(express.static(path.join('./public/')));
 app.use('/assets', express.static(path.join(__dirname, '../../assets')));
@@ -70,30 +65,16 @@ app.get('/nino-customer-check', (req, res) => {
 
 app.get('/logout',(req, res) => {
   req.session.destroy();
-  console.log(session.username);
-  console.log('ive destroyed the session');
   res.redirect('/');
 })
 
-app.post('/login', (req, res) => {
-  session=req.sessions;
-  loginController.validatePassword(req.body, res)
-});
-
-app.post('/nino-customer-check', (req, res) => {
-  validateNino.validateNino(req.body, res)
-});
-
-app.post('/change-password', (req, res) => {
-  loginController.updatePassword(req, res)
-})
 
 app.get('/edit-profile', (req, res)=>{
   res.render('edit-profile')
 })
 
 app.get('/change-password', (req, res)=> {
-  loginController.changePassword(req, res)
+  webController.changePassword(req, res)
 })
 
 app.get('/customerHub', (req, res) => {
@@ -101,30 +82,39 @@ app.get('/customerHub', (req, res) => {
 })
 
 app.get('/overview-details', (req, res) => {
-  validateNino.displayOverviewDetails(req, res);
+  webController.displayOverviewDetails(req, res);
 })
 
 app.get('/person-address-details', (req, res) => {
-  validateNino.displayAddressDetails(req, res)
+  webController.displayAddressDetails(req, res)
 })
 
 app.get('/bank-payment-details', (req, res) => {
-  validateNino.displayPaymentDetails(req, res)
+  webController.displayPaymentDetails(req, res)
 })
 
 app.get('/appointee-overview', (req, res) => {
-  validateNino.displayAppointeeDetails(req, res)
+  webController.displayAppointeeDetails(req, res)
 })
 
 app.get('/benefit-overview', (req, res) => {
-  validateNino.displayBenefitDetails(req, res)
+  webController.displayBenefitDetails(req, res)
 })
+
+app.post('/login', (req, res) => {
+  session=req.sessions;
+  webController.validatePassword(req.body, res)
+});
+
+app.post('/nino-customer-check', (req, res) => {
+  webController.validateNino(req.body, res)
+});
+
+app.post('/change-password', (req, res) => {
+  webController.updatePassword(req, res)
+})
+
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
-
-
-//Questions for Karls sessions
-//How do i make sure that the user cannot access any page unless they are logged in
-
